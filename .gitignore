@@ -99,7 +99,7 @@ ENV/
 *.txt
 .idea/*
 *.png
-*.nii.gz
+# *.nii.gz
 *.nii
 *.tif
 *.bmp
@@ -113,3 +113,4 @@ ENV/
 
 *.model
 
+work_dir

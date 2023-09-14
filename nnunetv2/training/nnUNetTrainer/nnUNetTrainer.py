@@ -140,9 +140,9 @@ class nnUNetTrainer(object):
         self.initial_lr = 1e-2
         self.weight_decay = 3e-5
         self.oversample_foreground_percent = 0.33
-        self.num_iterations_per_epoch = 250
+        self.num_iterations_per_epoch = 5
         self.num_val_iterations_per_epoch = 50
-        self.num_epochs = 1000
+        self.num_epochs = 3
         self.current_epoch = 0
 
         ### Dealing with labels/regions
@@ -527,7 +527,7 @@ class nnUNetTrainer(object):
                 self.print_to_log_file("Creating new 5-fold cross-validation split...")
                 splits = []
                 all_keys_sorted = np.sort(list(dataset.keys()))
-                kfold = KFold(n_splits=5, shuffle=True, random_state=12345)
+                kfold = KFold(n_splits=2, shuffle=True, random_state=12345)
                 for i, (train_idx, test_idx) in enumerate(kfold.split(all_keys_sorted)):
                     train_keys = np.array(all_keys_sorted)[train_idx]
                     test_keys = np.array(all_keys_sorted)[test_idx]

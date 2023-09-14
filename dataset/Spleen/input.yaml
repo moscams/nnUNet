@@ -1,0 +1,3 @@
+modality: CT
+datalist: "./dataset.json"
+dataroot: "/root/nnUNet/dataset/Spleen"
